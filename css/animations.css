@@ -36,6 +36,15 @@
   }
 }
 
+@keyframes marqueeUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
 .animate-in {
   opacity: 0;
   animation: fadeSlideUp 0.8s ease forwards;

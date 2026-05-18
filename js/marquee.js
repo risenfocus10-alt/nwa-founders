@@ -42,8 +42,33 @@ function buildMarquee(trackId, guests) {
   clones.forEach(t => track.appendChild(t));
 }
 
+function buildAboutMarquee() {
+  const tracks = [
+    { id: 'about-track-1', guests: guestData },
+    { id: 'about-track-2', guests: [...guestData].reverse() },
+    { id: 'about-track-3', guests: guestData }
+  ];
+  tracks.forEach(({ id, guests }) => {
+    const track = document.getElementById(id);
+    if (!track) return;
+    const tiles = guests.map(g => {
+      const tile = document.createElement('div');
+      tile.className = 'about-tile';
+      const img = document.createElement('img');
+      img.src = g.img;
+      img.alt = g.name;
+      img.onerror = () => tile.remove();
+      tile.appendChild(img);
+      return tile;
+    });
+    tiles.forEach(t => track.appendChild(t));
+    tiles.forEach(t => track.appendChild(t.cloneNode(true)));
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   buildMarquee('track-1', guestData);
   buildMarquee('track-2', [...guestData].reverse());
   buildMarquee('track-3', guestData);
+  buildAboutMarquee();
 });
