@@ -35,10 +35,9 @@ function buildTile(guest) {
 function buildMarquee(trackId, guests) {
   const track = document.getElementById(trackId);
   if (!track) return;
-
-  const tiles = guests.map(buildTile);
-  const clones = guests.map(buildTile);
-
+  if (!guests || guests.length === 0) return;
+  const tiles = guests.map(buildTile).filter(Boolean);
+  const clones = tiles.map(t => t.cloneNode(true));
   tiles.forEach(t => track.appendChild(t));
   clones.forEach(t => track.appendChild(t));
 }
