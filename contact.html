@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse all NWA Founders podcast episodes. Real conversations with the builders shaping Northwest Arkansas.">
-  <title>Episodes — NWA Founders</title>
+  <title>Join the Community — NWA Founders</title>
+  <meta name="description" content="Join the NWA Founders community. Stay up to date with the latest episodes, guests, and stories from Northwest Arkansas.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/png" href="assets/images/nwa-founders-logo.jpg">
@@ -33,22 +33,20 @@
     <a href="mailto:nwafounders@gmail.com">Contact</a>
   </div>
 
-  <div class="page-hero">
-    <p class="page-hero-label">ALL EPISODES</p>
-    <h1 class="page-hero-title">EPISODE ARCHIVE</h1>
-  </div>
-
-  <section id="archive">
-    <div class="search-wrap">
-      <input
-        type="text"
-        id="episode-search"
-        class="search-input"
-        placeholder="Search episodes..."
-        aria-label="Search episodes"
-      />
+  <section id="contact-hero">
+    <div class="contact-hero-inner">
+      <p class="contact-label">NWA FOUNDERS</p>
+      <h1 class="contact-headline">JOIN THE<br>COMMUNITY</h1>
+      <p class="contact-sub">Stay up to date with the latest episodes, guests, and stories from Northwest Arkansas.</p>
+      <form class="contact-form" action="mailto:nwafounders@gmail.com" method="GET" enctype="text/plain">
+        <div class="contact-form-row">
+          <input type="text" name="First Name" placeholder="First name" class="contact-input" required />
+          <input type="text" name="Last Name" placeholder="Last name" class="contact-input" required />
+        </div>
+        <input type="email" name="Email" placeholder="Email address" class="contact-input contact-input-full" required />
+        <button type="submit" class="contact-btn">SUBSCRIBE</button>
+      </form>
     </div>
-    <div id="all-episodes" class="episodes-list"></div>
   </section>
 
   <section id="sponsor">
@@ -100,6 +98,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/rss.js"></script>
 </body>
 </html>

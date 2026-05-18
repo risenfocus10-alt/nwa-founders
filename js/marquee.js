@@ -34,6 +34,7 @@ function buildTile(guest) {
 
 function buildMarquee(trackId, guests) {
   const track = document.getElementById(trackId);
+  if (!track) return;
 
   const tiles = guests.map(buildTile);
   const clones = guests.map(buildTile);
